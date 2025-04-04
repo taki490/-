@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');  
+
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+    font-family: 'Poppins', sans-serif;  
+}  
+
+:root {  
+    --clr: rgb(1, 79, 167);
+    --run:rgb(8, 238, 150);
+    --tex:rgb(0, 247, 255);  
+    --box:  #2ba8e2;
+}  
+
+body {
+    display: flex;  
+    justify-content: center;  
+    align-items: center;
+    min-height: 30vh;
+    background: var(--clr);   
+}
+.nav1{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 3rem;
+}
+
+
+
+/*final*/
+
+
+
+/*logo*/
+.nav1 .logo .icon img{
+    margin-left: -49%;
+    display: flex;
+    position: absolute;
+    top: 0.5rem;                
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+
+
+/*final*/
+
+
+/*class*/
+.nav1 .nav{
+    background: var(--box);
+    width: 65%;
+    display: inline-flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: 20px;
+    position: fixed;
+    top: 40px;  /* المسافة من الأعلى */
+    left: 32%;  
+    z-index: 1000;
+}
+.nav1 .nav .navigation {
+    padding-left: 2rem;
+    width: 100%;
+    position: relative;  
+    height: 70px;  
+    background: transparent;  
+    display: flex;
+    align-items: center; 
+}  
+.nav .navigation .icon i{
+    border-radius: 50%;
+}
+.nav1 .nav .navigation ul {
+    justify-content: space-between; 
+    display: flex;  
+    width: 350px;  
+}
+
+.nav1 .nav .navigation ul li {  
+    position: relative;  
+    list-style: none;  
+    width: 70px;  
+    height: 70px;  
+    z-index: 1;  
+}  
+
+.navigation ul li a {  
+    position: relative;  
+    display: flex;  
+    justify-content: center; 
+    flex-direction: column;  
+    width: 100%;  
+    text-align: center;
+    font-weight: 500;  
+} 
+.nav1 .nav .navigation ul li .icon { 
+    position: relative;  
+    display: block;  
+    line-height: 75px;  
+    font-size: 2.5rem;  
+    text-align: center;  
+    transition: 0.5s;  
+    color: var(--clr);  
+} 
+.nav1 .nav .navigation ul li.active1 a .icon {  
+    transform: translateY(-32px);  
+    color: var(--run);
+}  
+.nav1 .nav .navigation ul li.active1 a .icon i {
+    width: max-content;
+    height: max-content;
+    background: var(--box);
+    border-radius: 50%;
+}
+
+.nav1 .nav .navigation ul li a .text {  
+    position: absolute;
+    color: var(--clr);  
+    font-weight: 400;  
+    font-size: 1rem;  
+    letter-spacing: 0.05em;
+    text-align: center;
+    transition: 0.5s;  
+    opacity: 0;  
+    transform: translateY(20px);  
+}  
+
+.nav1 .nav  .navigation ul li.active1 a .text {  
+    opacity: 1;  
+    transform: translateY(10px);  
+    color: var(--run);
+}
+.indicator {  
+    position: absolute;  
+    top: -50%;  
+    width: 70px;  
+    height: 70px;  
+    background: var(--box);  
+    border-radius: 50%;  
+    border: 6px solid var(--clr);  
+    transition: 0.5s;  
+}  
+
+.indicator::before {  
+    content: '';  
+    position: absolute;  
+    top: 50%;  
+    left: -22px;  
+    width: 20px;  
+    height: 20px;  
+    background: transparent;  
+    border-top-right-radius: 20px;  
+    box-shadow: 0px -10px 0 0 var(--clr); 
+}  
+.indicator::after {  
+    content: '';  
+    position: absolute;  
+    top: 50%;  
+    right: -22px;  
+    width: 20px;  
+    height: 20px;  
+    background: transparent;  
+    border-top-left-radius: 20px;  
+    box-shadow: 0px -10px 0 0 var(--clr);
+}  
+.nav1 .nav .navigation ul li:nth-child(1).active1 ~ .indicator {  
+    transform: translateX(calc(70px * 0));
+}  
+
+.nav1 .nav .navigation ul li:nth-child(2).active1 ~ .indicator {  
+    transform: translateX(calc(70px * 1));  
+}
+.nav1 .nav .navigation ul li:nth-child(3).active1 ~ .indicator {  
+    transform: translateX(calc(70px * 2));  
+}
+.nav1 .nav .navigation ul li:nth-child(4).active1 ~ .indicator {  
+    transform: translateX(calc(70px * 3));  
+}
+.nav1 .nav .navigation ul li:nth-child(5).active1 ~ .indicator {  
+    transform: translateX(calc(70px * 4));  
+}
+
+
+
+/*final*/
+
+
+
+/*search-bar*/
+
+
+
+.nav1 .nav .search-container {
+    padding-top: 0.5rem;
+    padding-right: 2rem;
+    background: transparent;
+    position: relative;
+    width: 700px;
+    margin-left: 10rem;
+}
+.nav1 .nav .search-container input {
+    width: 80%;
+    padding: 10px 40px 10px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--clr);
+    font-size: 20px;
+    outline: none;
+    background: transparent;
+    transition: 0.3s ease;
+    color: var(--tex);
+}
+.nav1 .nav .search-container input:focus{
+    border: 2px solid var(--run);
+}
+.nav1 .nav .search-container label {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 20px;
+    letter-spacing: 0.05px;
+    color: var(--clr);
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+.nav1 .nav .search-container input:focus + label,
+.nav1 .nav .search-container input:not(:placeholder-shown) + label {
+    margin-top: px;
+    top: 0.4rem;
+    font-size: 20px;
+    color: var(--run);
+    background: var(--box);
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 7px;
+}
+
+.search-icon i {
+    position: absolute;
+    right: 10px;
+    top: 48%;
+    left: 90%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: var(--clr);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav1 .nav .search-container input:focus ~ .search-icon i {
+    color: var(--run);
+}
+
+
+/*final*/
+
+
+/*slaiderr*/
+.slider-container { position: absolute; width: 100vw; height: 75vh; overflow: hidden; top: 7.2rem; }
+        .slider { display: flex; width: 600%; transition: transform 0.5s ease-in-out; }
+        .slide { width: 100vw; height: 80vh; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; }
+        .slide img{   object-fit: cover; width: 100%; height: 100%;   }
+        
+        .indicatorse { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; }
+        .indicatore { width: 15px; height: 15px; background: var(--clr); border-radius: 50%; transition: all 0.5s; cursor: pointer; }
+        .actives { background: var(--run); transform: scale(1.3); }
+        .slider-container .left, .slider-container .right {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 50%; height: 100%; cursor: pointer;
+        }
+        
+        
+        
+     
+        
